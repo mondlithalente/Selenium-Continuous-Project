@@ -39,6 +39,7 @@ public class LoginPage {
         enterUsername("trenchkid200603@gmail.com");
         enterPassword("Test123?");
         clickLoginSubmitButton();
+
     }
 
 }
