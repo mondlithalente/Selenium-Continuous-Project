@@ -33,13 +33,13 @@ public class LoginPage {
         loginSubmitButton.click();
     }
 
-    //I am going to call this method in any Workflow since it's just simple login (initial start of any test)
-    public void loginAs(){
-
-        enterUsername("trenchkid200603@gmail.com");
-        enterPassword("Test123?");
-        clickLoginSubmitButton();
-
-    }
+//    //I am going to call this method in any Workflow since it's just simple login (initial start of any test)
+//    public void loginAs(){
+//
+//        enterUsername("trenchkid200603@gmail.com");
+//        enterPassword("Test123?");
+//        clickLoginSubmitButton();
+//
+//    }
 
 }

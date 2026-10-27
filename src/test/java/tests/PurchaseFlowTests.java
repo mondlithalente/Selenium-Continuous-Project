@@ -8,7 +8,6 @@ public class PurchaseFlowTests extends Base {
     public void testNavigateToLearningMaterials() throws InterruptedException {
 
         homepage.clickLoginButton();
-        loginPage.loginAs();
         landingPage.verifyLoginSuccess();
         landingPage.clickLearnTab();
         landingPage.selectLearningMaterials();

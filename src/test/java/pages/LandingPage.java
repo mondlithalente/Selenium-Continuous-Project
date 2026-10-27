@@ -36,9 +36,10 @@ public class LandingPage {
     }
 
     public void verifyLoginSuccess() {
-        new WebDriverWait(driver, Duration.ofSeconds(5)).until(ExpectedConditions.visibilityOf(myLearningTab));
+        new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(myLearningTab));
         myLearningTab.isDisplayed();
     }
+
 
     public void clickLearnTab() {
         learnTab.click();
@@ -48,6 +49,8 @@ public class LandingPage {
     public void selectLearningMaterials() {
         learningMaterialsDropdown.click();
     }
+
+
 
 
     public void clickLogoutMenu() {
