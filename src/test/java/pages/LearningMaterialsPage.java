@@ -3,8 +3,12 @@ package pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openxmlformats.schemas.drawingml.x2006.main.ThemeDocument;
+
+import java.time.Duration;
 
 public class LearningMaterialsPage {
 
@@ -70,6 +74,7 @@ public class LearningMaterialsPage {
         quantity.sendKeys(enteredQty);
         address.sendKeys(enteredAddress);
         inventory_next_btn.click();
+        new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(shipping_express));
 
     }
 
@@ -79,7 +84,8 @@ public class LearningMaterialsPage {
         discount_code.sendKeys(discountCode);
         apply_discount_btn.click();
         purchase_device_btn.click();
-        Thread.sleep(2000);
+
+        new WebDriverWait(driver, Duration.ofSeconds(5)).until(ExpectedConditions.visibilityOf(view_history_btn));
         view_history_btn.click();
     }
 

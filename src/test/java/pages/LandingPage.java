@@ -3,6 +3,10 @@ package pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class LandingPage {
 
@@ -26,26 +30,32 @@ public class LandingPage {
 
 
 
+
     public LandingPage(WebDriver driver) {
         this.driver = driver;
     }
 
     public void verifyLoginSuccess() {
+        new WebDriverWait(driver, Duration.ofSeconds(5)).until(ExpectedConditions.visibilityOf(myLearningTab));
         myLearningTab.isDisplayed();
     }
 
-    public void clickLogoutMenu() {
-        logoutMenu.click();
-    }
-
-    public void clickLogoutButton() {logoutButton.click();}
-
     public void clickLearnTab() {
         learnTab.click();
+        new WebDriverWait(driver, Duration.ofSeconds(5)).until(ExpectedConditions.visibilityOf(learningMaterialsDropdown));
     }
 
     public void selectLearningMaterials() {
         learningMaterialsDropdown.click();
     }
+
+
+    public void clickLogoutMenu() {
+        logoutMenu.click();
+        new WebDriverWait(driver, Duration.ofSeconds(5)).until(ExpectedConditions.visibilityOf(logoutButton));
+
+    }
+
+    public void clickLogoutButton() {logoutButton.click();}
 
 }

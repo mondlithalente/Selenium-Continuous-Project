@@ -9,9 +9,8 @@ public class PurchaseFlowTests extends Base {
 
         homepage.clickLoginButton();
         loginPage.loginAs();
-        Thread.sleep(1500);
+        landingPage.verifyLoginSuccess();
         landingPage.clickLearnTab();
-        Thread.sleep(1200);
         landingPage.selectLearningMaterials();
     }
 
@@ -19,10 +18,8 @@ public class PurchaseFlowTests extends Base {
     public void testDevicePurchase() throws InterruptedException {
         learningMaterialsPage.clickWebAutomationAdvanceTab();
         learningMaterialsPage.firstSegmentOfPurchase("Phone", "Apple", "Blue", "2", "Selenium Street");
-        Thread.sleep(2000);
         takeScreenshots.takeSnapShot(driver, "First part of purchase");
         learningMaterialsPage.secondSegmentOfPurchase("SAVE10");
-        Thread.sleep(2000);
         takeScreenshots.takeSnapShot(driver, "Second part of purchase");
     }
 
