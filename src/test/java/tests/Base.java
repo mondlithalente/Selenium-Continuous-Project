@@ -7,6 +7,7 @@ import pages.LandingPage;
 import pages.LearningMaterialsPage;
 import pages.LoginPage;
 import utils.BrowserFactory;
+import utils.ReadData;
 import utils.TakeScreenshots;
 
 public class Base {
@@ -19,4 +20,16 @@ public class Base {
     public LandingPage landingPage = PageFactory.initElements(driver, LandingPage.class);
     public LearningMaterialsPage learningMaterialsPage = PageFactory.initElements(driver, LearningMaterialsPage.class);
     public TakeScreenshots takeScreenshots = new TakeScreenshots();
+
+    //Handle any exceptions because we are dealing with reading files
+     ReadData readData;
+    {
+        try{
+            readData = new ReadData();
+        }
+        catch (Exception ex){
+            throw new RuntimeException(ex);
+        }
+    }
+
 }

@@ -2,13 +2,21 @@ package tests;
 
 import org.testng.annotations.Test;
 
+
+import static utils.ReadData.username;
+
+import static utils.ReadData.password;
+
+
 public class LoginTests extends Base {
 
     @Test
     public void validLoginTest() throws InterruptedException {
         takeScreenshots.takeSnapShot(driver, "BeforeLogin");
         homepage.clickLoginButton();
-        loginPage.loginAs();
+        loginPage.enterUsername(username);
+        loginPage.enterPassword(password);
+        loginPage.clickLoginSubmitButton();
         landingPage.verifyLoginSuccess();
         takeScreenshots.takeSnapShot(driver, "AfterLogin");
 
