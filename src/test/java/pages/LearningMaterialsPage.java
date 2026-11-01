@@ -71,6 +71,7 @@ public class LearningMaterialsPage {
         new Select(brand).selectByVisibleText(selectedBrand);
         storage128GB.click();
         new Select(color).selectByVisibleText(chosenColor);
+        quantity.clear();
         quantity.sendKeys(enteredQty);
         address.sendKeys(enteredAddress);
         inventory_next_btn.click();

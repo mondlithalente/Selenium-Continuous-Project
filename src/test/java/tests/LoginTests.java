@@ -1,7 +1,7 @@
 package tests;
 
 import org.testng.annotations.Test;
-import utils.ReadData;
+
 
 import static utils.ReadData.username;
 
